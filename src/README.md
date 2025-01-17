@@ -1,38 +1,25 @@
-# Trackformer video Segmentation
+# Trackformer DETR-Only Mode
 
-Train and test your model with this repo
+Train and test your model using this repository.
 
-To do inference, since we didn't diverged particularly from trackformer repo\
+## **Inference**
+To perform inference:
+1. Clone commit `958cf89a3d912182e0a67327b493c34232ca8ec4` from the [official Trackformer repository](https://github.com/timmeinhardt/trackformer) as mentioned in [Issue #47](https://github.com/timmeinhardt/trackformer/issues/47).
+2. Follow the installation steps from the original repository.
 
-Clone commit 958cf89a3d912182e0a67327b493c34232ca8ec4 from the official trackformer repository : https://github.com/timmeinhardt/trackformer
-as stated in the following issue : https://github.com/timmeinhardt/trackformer/issues/47
+---
 
-Follow the installation steps in the repo.
+## **Setup**
+1. Clone this repository.
+2. Replace the `src` folder in the official Trackformer repository with the `src` folder from this repository.
+3. Download the MOTS17 dataset (or any dataset of your choice):
+   - Place your dataset folder containing images in `/data`.
+   - Update `data_root_dir` to point to your dataset folder.
+   - Set `obj_detect_checkpoint_file` to the path of your trained model.
 
-Clone this repository, delete the original src and rename this repo as src
+---
 
-Download MOTS20 dataset\
-
-Specify your dataset name or leave EXCAV to use any dataset
-Put in /data you folder with images and then ...
-Specify data_root_dir to the path to your image folder
-Specify obj_detect_checkpoint_file to the path to your model
-
-Before running source and eventually install deformable attention module:
-```python src/trackformer/models/ops/setup.py build --build-base=src/trackformer/models/ops/ install ```
-
-
-Then run 
-
-```python new_track.py ```
-
-For Training run 
-
-python src/train.py
-
-  ``` python src/new_train.py ```
-
-
-
-
-    
+## **Install Deformable Attention Module**
+Run the following command to build and install the deformable attention module:
+```bash
+python src/trackformer/models/ops/setup.py build --build-base=src/trackformer/models/ops/ install
