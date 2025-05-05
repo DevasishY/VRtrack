@@ -93,7 +93,7 @@ python src/track.py with \
   <table>
     <tr>
       <td align="center">
-        <img src="docs/" alt="TrackFormer Demo" width="400"/><br/>
+        <img src="docs/MOT17-01-SDP_trackformerDETR-ezgif.com-optimize.gif" alt="TrackFormer Demo" width="400"/><br/>
         <b>TrackFormer (DETR)</b>
       </td>
       <td align="center">
