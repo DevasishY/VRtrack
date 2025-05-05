@@ -93,11 +93,11 @@ python src/track.py with \
   <table>
     <tr>
       <td align="center">
-        <img src="docs/trackformer.gif" alt="TrackFormer Demo" width="400"/><br/>
+        <img src="docs/" alt="TrackFormer Demo" width="400"/><br/>
         <b>TrackFormer (DETR)</b>
       </td>
       <td align="center">
-        <img src="docs/hybrid.gif" alt="Hybrid Model Demo" width="400"/><br/>
+        <img src="docs/MOT17-01-SDP-ezgif.com-optimize.gif" alt="Hybrid Model Demo" width="400"/><br/>
         <b>Hybrid Model (VRWKV + DETR)</b>
       </td>
     </tr>
