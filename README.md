@@ -106,7 +106,7 @@ python src/track.py with \
 
 
 ## Publication
-If you use this software in your research, please cite this publication:
+If you use this software in your research, please cite these publications:
 
 ```
 @InProceedings{meinhardt2021trackformer,
@@ -115,5 +115,14 @@ If you use this software in your research, please cite this publication:
     year={2022},
     month = {June},
     booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+}
+@misc{duan2025visionrwkvefficientscalablevisual,
+      title={Vision-RWKV: Efficient and Scalable Visual Perception with RWKV-Like Architectures}, 
+      author={Yuchen Duan and Weiyun Wang and Zhe Chen and Xizhou Zhu and Lewei Lu and Tong Lu and Yu Qiao and Hongsheng Li and Jifeng Dai and Wenhai Wang},
+      year={2025},
+      eprint={2403.02308},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2403.02308}, 
 }
 ```
