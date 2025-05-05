@@ -30,6 +30,33 @@ We refer to our [docs/INSTALL.md](docs/INSTALL.md) for detailed installation ins
 
 We refer to our [docs/TRAIN.md](docs/TRAIN.md) for detailed training instructions.
 
+## Training Details and Metrics
+
+Due to compute constraints, we trained our model from scratch for **50 epochs**, similar to the Deformable DETR-based TrackFormer setup. However, DETR typically requires **at least 300 epochs to converge** effectively, which affected the stability of certain tracking metrics such as **MOTA** and **IDF1**, occasionally leading to `NaN` or negative values during evaluation.
+
+To better capture the performance trends in such early-stage training, we focus primarily on the **Recall** metric, which remains more stable and informative under partial convergence. This allows us to better assess detection quality independently of association errors.
+
+---
+
+## Model Variants
+
+We experimented with two major configurations:
+
+1. **Standard DETR-based TrackFormer**: Uses the original DETR encoder and decoder (we commited it from Official implementation of Tracformer by Tim Meinhardt).
+2. **Hybrid Model (VRWKV-Encoder + DETR-Decoder)**: We replaced the encoder in DETR with a [**VRWKV**](https://github.com/OpenGVLab/Vision-RWKV) encoder to reduce complexity and improve performance on high-resolution inputs, while keeping the DETR decoder intact.
+
+---
+
+## Loss Curves
+
+Below are the training loss curves over 50 epochs:
+
+![Training Loss Curve](path/to/loss_curve.png)
+
+
+---
+
+
 ## Evaluate TrackFormer
 
 In order to evaluate TrackFormer on a multi-object tracking dataset, we provide the `src/track.py` script which supports several datasets and splits interchangle via the `dataset_name` argument (See `src/datasets/tracking/factory.py` for an overview of all datasets.) The default tracking configuration is specified in `cfgs/track.yaml`. To facilitate the reproducibility of our results, we provide evaluation metrics for both the train and test set.
