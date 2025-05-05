@@ -1,6 +1,6 @@
 # TrackFormer: Multi-Object Tracking with Transformers
 
-This repository uses the official implementation of the [TrackFormer: Multi-Object Tracking with Transformers](https://arxiv.org/abs/2101.02702) paper by [Tim Meinhardt](https://dvl.in.tum.de/team/meinhardt/). The codebase builds upon [DETR](https://github.com/facebookresearch/detr), [Tracktor](https://github.com/phil-bergmann/tracking_wo_bnw) and [VRWKV](https://github.com/OpenGVLab/Vision-RWKV).
+This repository builds upon the official implementation of [TrackFormer: Multi-Object Tracking with Transformers](https://arxiv.org/abs/2101.02702) paper by [Tim Meinhardt](https://dvl.in.tum.de/team/meinhardt/). The codebase integrates components from [DETR](https://github.com/facebookresearch/detr), [Tracktor](https://github.com/phil-bergmann/tracking_wo_bnw) and [VRWKV](https://github.com/OpenGVLab/Vision-RWKV). In our work, we focus exclusively on DETR-based tracking, with a primary goal of reducing the quadratic complexity inherent in conventional Transformer architectures. Our modifications enable the model to process high-resolution images—up to 2× the resolution typically handled by Trackformer—while maintaining tracking accuracy.
 
 <!-- **As the paper is still under submission this repository will continuously be updated and might at times not reflect the current state of the [arXiv paper](https://arxiv.org/abs/2012.01866).** -->
 
