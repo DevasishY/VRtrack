@@ -51,7 +51,7 @@ We experimented with two major configurations:
 
 Below are the training loss curves over 50 epochs:
 
-![Training Loss Curve](path/to/loss_curve.png)
+![Training Loss Curve](docs/loss.png)
 
 
 ---
