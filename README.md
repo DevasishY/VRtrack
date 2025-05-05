@@ -63,43 +63,47 @@ In order to evaluate TrackFormer on a multi-object tracking dataset, we provide 
 
 ### MOT17
 
-#### Private detections
-
 ```
 python src/track.py with reid
 ```
+## Recall Comparison (50 Epochs)
 
-<center>
+| Metric                                                          | Proposed Model (VRWKV+DETR) | TrackFormer (DETR) |
+|------------------------------------------------------------------|------------------------------|---------------------|
+| AR@[IoU=0.50:0.95 — area=all — maxDets=1]                        | 0.012                        | 0.000               |
+| AR@[IoU=0.50:0.95 — area=all — maxDets=10]                       | 0.068                        | 0.000               |
+| AR@[IoU=0.50:0.95 — area=all — maxDets=100]                      | 0.145                        | 0.000               |
+| AR@[IoU=0.50:0.95 — area=small — maxDets=100]                    | 0.000                        | 0.000               |
+| AR@[IoU=0.50:0.95 — area=medium — maxDets=100]                   | 0.081                        | 0.000               |
+| AR@[IoU=0.50:0.95 — area=large — maxDets=100]                    | 0.410                        | 0.001               |
 
-| MOT17     | MOTA         | IDF1           |       MT     |     ML     |     FP       |     FN              |  ID SW.      |
-|  :---:    | :---:        |     :---:      |    :---:     | :---:      |    :---:     |   :---:             |  :---:       |
-| **Train** |     74.2     |     71.7       |     849      | 177        |      7431    |      78057          |  1449        |
-| **Test**  |     74.1     |     68.0       |    1113      | 246        |     34602    |     108777          |  2829        |
+> **Table 2**: Recall comparison between the proposed model (VRWKV encoder + DETR decoder) and the original TrackFormer with DETR. All results are reported after 50 epochs of training.
 
-</center>
-
-#### Public detections (DPM, FRCNN, SDP)
 
 ```
 python src/track.py with \
     reid \
     tracker_cfg.public_detections=min_iou_0_5 \
-    obj_detect_checkpoint_file=models/mot17_deformable_multi_frame/checkpoint_epoch_50.pth
+    obj_detect_checkpoint_file=models/your_saved_model_name/checkpoint_epoch_50.pth
 ```
 
-<center>
-
-| MOT17     | MOTA         | IDF1           |       MT     |     ML     |     FP       |     FN              |  ID SW.      |
-|  :---:    | :---:        |     :---:      |    :---:     | :---:      |    :---:     |   :---:             |  :---:       |
-| **Train** |     64.6     |     63.7       |    621       | 675        |     4827     |     111958          |  2556        |
-| **Test**  |     62.3     |     57.6       |    688       | 638        |     16591    |     192123          |  4018        |
-
-</center>
 
 
 <div align="center">
-    <img src="docs/snakeboard.gif" alt="Snakeboard demo" width="600"/>
+  <table>
+    <tr>
+      <td align="center">
+        <img src="docs/trackformer.gif" alt="TrackFormer Demo" width="400"/><br/>
+        <b>TrackFormer (DETR)</b>
+      </td>
+      <td align="center">
+        <img src="docs/hybrid.gif" alt="Hybrid Model Demo" width="400"/><br/>
+        <b>Hybrid Model (VRWKV + DETR)</b>
+      </td>
+    </tr>
+  </table>
 </div>
+
 
 ## Publication
 If you use this software in your research, please cite this publication:
